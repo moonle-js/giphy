@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+body{
+    background-color: #18122B;
+}
+main{
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}    
+
+    main #elements{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        row-gap: 20px;
+        column-gap: 20px;
+        padding: 20px;
+        align-items: flex-start;
+        width: 60%;
+        height: 100%;
+        min-height: 200px;
+    }
+    main #addElement{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 30%;
+        height: 100%;
+        min-height: 200px;
+    }
+    main #addElement *{
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        padding: 0 10px;
+        cursor: pointer;
+        background-color: #635985;
+        color: #ccc;
+    }
+
+#button{
+    width: 150px;
+    height: 50px;
+    border: 2px solid gold;
+    cursor: pointer;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer #gifsBlock{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+/* Added divs */
+.addedMain{
+    padding: 10px;
+    color: #ccc;
+    border-radius: 15px;
+    background-color: #635985;
+    position: relative;
+}
+.addedMain:hover .addedX{
+    display: flex;
+}
+.addedX{
+    position: absolute;
+    top: 0;
+    right: -5px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 15px;
+    cursor: pointer;
+    line-height: 1em;
+    font-size: 0.8em;
+    transition: .4s all ease;
+}
+
+/* giphy */
+.giphy{
+    width: 30%;
+    height: 30%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+@media screen and (max-width: 700px){
+    main{
+        flex-direction: column;
+    }
+    main #addElement, main #elements{
+        width: 96% !important;
+        border: 2px solid green;
+    }
+}
