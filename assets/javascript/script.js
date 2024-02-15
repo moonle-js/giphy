@@ -72,10 +72,8 @@ function findGiphy(element){
             })    
 }
 
-//  Here i am adding searched element to the menu
-findButton.addEventListener('click', function(){
-    if(addElementPrompt.value.trim()){
-        elements.innerHTML += `
+function clickOrEnter(){
+    elements.innerHTML += `
         <div class = "addedMain">
             <div class = "added">
                 <p>${addElementPrompt.value}</p>
@@ -87,6 +85,19 @@ findButton.addEventListener('click', function(){
         // and here i am fetching result of my search
         findGiphy(addElementPrompt.value)
         addElementPrompt.value = '';
+}
+
+//  Here i am adding searched element to the menu
+findButton.addEventListener('click', function(){
+    if(addElementPrompt.value.trim()){
+        clickOrEnter();
     }
     
 })
+document.addEventListener('keyup', function(e){
+    if(e.key == "Enter" && addElementPrompt.value.trim()){
+        clickOrEnter();
+    }
+})
+
+
